@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<title>Formulaire d'inscription en Javascript</title>
+		<meta name="description" content="Contrôler et valider les saisies d'un formulaire d'inscription Web par le code client Javascript" />
+		<meta name="robots" content="index,follow" />
+		<meta http-equiv="content-language" content="fr" />
+		<link href='styles/mise_forme.css' rel='stylesheet' type='text/css' />
+	</head>
+<body>
+
+	<div class="div_conteneur_parent">
+		<div class="div_conteneur_page">		
+			<div class="titre_page"><h1>Formulaire d'inscription </h1></div>
+			
+			<div class="div_int_page">
+					<div class="div_saut_ligne">
+					</div>						
+					<div style="float:left;width:10%;height:40px;"></div>
+					<div style="float:left;width:80%;height:40px;text-align:center;">
+					<div id="Titre">
+					<h1>Réalisation d'une fonction autocomplète</h1>
+					</div>
+					</div>
+					<div style="float:left;width:10%;height:40px;"></div>
+					
+					<div class="div_saut_ligne" style="height:60px">
+					</div>
+					
+					<div style="width:100%;height:auto;text-align:center;">
+					
+					<div style="width:800px;display:inline-block;" id="conteneur">
+						<div id="centre">
+						<div id="message">
+						Tous les champs sont obligatoires
+						</div>
+							<form id="inscription" name="inscription" method="post" >				
+								<div class="div_input_form">
+									<input type="text" name="nom" id="nom" maxlength="50" class="input_form" value='Votre nom' onClick="saisie('Votre nom',this.id)" onMouseOut="retablir('Votre nom',this.id)" onblur="mev('Votre nom',this.id)" />
+								</div>
+								<div class="div_input_form">
+									<input type="text" name="prenom" id="prenom" maxlength="50" class="input_form" value='Votre prénom' onClick="saisie('Votre prénom',this.id)" onMouseOut="retablir('Votre prénom',this.id)" onblur="mev('Votre prénom',this.id)" />
+								</div>
+								<div class="div_input_form">
+									<select id="civilite" name="civilite" onChange="Javascript:if(this.value>0){ sese=true; } else{ sexe=false; }">
+										<option value="0">sexe</option>
+										<option value="1">feminin</option>
+										<option value="2">masculin</option>
+									</select>
+								</div>	
+								<div class="div_input_form">
+									<input type="text" name="date_n" id="date_n" maxlength="50" class="input_form" value='Date de naissance' onClick="saisie('Date de naissance',this.id)" onMouseOut="retablir('Date de naissance',this.id)" onblur="mev('Date de naissance',this.id)" />
+								</div>
+								<div class="div_input_form">
+									<input type="text" name="mail_inscr" id="mail_inscr" maxlength="150" class="input_form" value='Votre mail' onClick="saisie('Votre mail',this.id)" onMouseOut="retablir('Votre mail',this.id)" onblur="mev('Votre mail',this.id)" />
+								</div>
+								<div class="div_input_form">
+									<input type="text" name="cmail_inscr" id="cmail_inscr" maxlength="150" class="input_form" value='Confirmer le mail' onClick="saisie('Confirmer le mail',this.id)" onMouseOut="retablir('Confirmer le mail',this.id)" onblur="mev('Confirmer le mail',this.id)" />
+								</div>
+								<div class="div_input_form">
+									Mot de passe : minimum 8 caractères<br />
+									<input type="password" name="mp_inscr" id="mp_inscr" maxlength="10" class="input_form" value="Mot de passe" onClick="saisie('Mot de passe',this.id)" onMouseOut="retablir('Mot de passe',this.id)" onblur="mev('Mot de passe',this.id)" />
+								</div>
+								<div class="div_input_form">
+									Confirmer le mot de passe :<br />
+									<input type="password" name="mp_conf" id="mp_conf" maxlength="10" class="input_form" value="Confirmer MP" onClick="saisie('Confirmer MP',this.id)" onMouseOut="retablir('Confirmer MP',this.id)" onblur="mev('Confirmer MP',this.id)" />
+								</div>
+								<div class="div_input_form">
+									<input type="text" name="ville" id="ville" maxlength="50" class="input_form" value='Ville' onClick="saisieAuto('Ville',this.id)" onMouseOut="retablir('Ville',this.id)" onblur="mev('Ville',this.id)" />
+								</div>
+								<div></div>								
+								<div class="div_input_form" id="button">
+									<input type="button"  class="input_form" value="Annuler" onclick="reset()" />
+									<input type="button" name="valid_inscr" id="valid_inscr" class="input_form" value="Valider" onclick="envoyer()" />
+								</div>
+								<div class="div_input_form"><h1>Le champ ville est lié à une fonction d'autocomplétion</h1></div>	
+							</form>	
+						</div>
+					</div>
+					
+					</div>
+
+					<div class="div_saut_ligne" style="height:150px;">
+				</div>
+		</div>
+	
+	</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>	
+<script language="javascript" src="js/fonctions_associees.js"></script>	
+</body>
+</html>
